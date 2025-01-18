@@ -1,73 +1,72 @@
 body {
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
 
-    font-family: "Times New Roman", serif;
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Light background for the page */
+.content {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 120px;
+  border: 1px solid #ccc;
+  background-color: #333;
+}
 
-  }
+.title {
+  text-align: center;
+}
 
-  body.groove {p.groove {border-style: groove;}
-  }
-  
-  /* Title and subtitle styles */
-  .title h1, .title h2 {
-    text-align: center; /* Center the titles */
-    letter-spacing: 2px; /* Spacing between letters */
-    text-transform: uppercase; /* Make titles all caps */
-    line-height: 1.5; /* Increase line height */
-    margin: 20px 0; /* Add margin above and below titles */
-  }
-  
-  /* Subtitle specific color */
-  .title h2 {
-    color: #006EB6; /* Subtitle color */
-    font-size: medium;
-    text-decoration: underline;
-    text-decoration-color: rgb(208, 208, 208);
-  }
+.title h1 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-weight: normal;
+}
 
-  u {
-    color: gray
-  }
-  
-  /* Content box */
-  .content {
-    max-width: 900px; /* You can adjust the maximum width based on the layout */
-    margin: 0 auto; /* Center the content on the page */
-    padding: 20px; /* Padding inside the content box */
-    background-color: #ffffff; /* White background for content */
-  }
-  
-  /* Main content */
-  main {
-    padding: 10px 0; /* Padding around the main content */
-  }
-  
-  /* Paragraph styling */
-  p {
-    text-align: left; /* Left-align paragraphs */
-    line-height: 1.5; /* Line height for readability */
-    margin-bottom: 15px; /* Margin between paragraphs */
-  }
-  
-  /* List styling */
-  .does-list {
-    margin-left: 20px; /* Indentation for the list */
-    line-height: 1.6; /* Line height for readability */
-  }
-  
-  /* Footer styles */
-  footer {
-    text-align: center; /* Center the footer content */
-    margin-top: 30px; /* Add margin to the top of the footer */
-  }
-  
-  /* Logo image */
-  img.logo {
-    width: 150px; /* Set logo width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Make the image a block element */
-    margin: 0 auto; /* Center the logo image */
-  }
+.title h2 {
+  color: #006EB6;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: normal;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+main {
+  text-align: left;
+  line-height: 1.5;
+}
+
+main p{
+  margin-top: 40px;
+}
+
+main p + ol {
+  margin-left: 20px;
+}
+
+main ol li {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+}
+
+footer img {
+  padding-top: 40px;
+  width: 150px;
+  height: auto;
+}
+
+.dark {
+  background-color: #333;
+  color: whitesmoke;
+}
+
+.dark .title h2 {
+  color: #99ccff;
+}
