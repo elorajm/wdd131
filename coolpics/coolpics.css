@@ -1,0 +1,205 @@
+/*-------------------------Import Fonts-------------------------*/
+/* Fonts that come from an external source. */
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+/*-------------------------Normalized/Reset styles-------------------------*/
+/* Ensures consistent styling across different browsers. */
+
+/* My Week 3 Prepare Activity is the source for me using this */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/*-------------------------Base Variables-------------------------*/
+/* Defines CSS custom properties for global reuse (colors, fonts, etc.). */
+:root {
+    --primary-color: #52489c;
+    --secondary-color: #59c3c3;
+    --accent-color: #f45b69;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: 'Mooli', sans-serif;
+}
+
+/*-------------------------Global Styles-------------------------*/
+/* Sets default styles for typography, links, and foundational elements. */
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  background-color: #ebebeb;
+}
+
+header, footer {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+h1, h2 {
+  text-align: center;
+  font-family: var(--secondary-font);
+  font-size: 2em;
+}
+  a:link {
+    color: var(--text-light);
+  }
+  a:visited {
+    color: var(--accent-color);
+  }
+
+
+/*-------------------------Layout and Grid System-------------------------*/
+/* Defines styles for the main layout components (header, footer, nav). */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+/*-------------------------Component Styles-------------------------*/
+/* Styles for reusable UI components (buttons, cards, modals). */
+img {
+  max-width: 100%;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.topmenu {
+  display: none; /* Set to 'none' by default, JavaScript will modify to be 'flex' later */
+  flex-direction: column;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  align-items: center;
+}
+
+.viewer {
+  display: none; /* Set to 'none' by default, JavaScript will modify to be something later */
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.viewer img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/*-------------------------Page-Specific Styles-------------------------*/
+/* Styles specific to individual pages or sections.*/
+
+/* Gallery */
+section {
+    display: grid;
+    justify-items: center;
+    padding: 5px;
+}
+
+figure {
+    margin: 10px;
+    width: 250px; 
+    height: 250px;
+    overflow: hidden;
+    padding: 6px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black; 
+}
+
+/*-------------------------Responsive Styles-------------------------*/
+/* Media queries for adapting the layout to different screen sizes. */
+@media screen and (min-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .viewer {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    padding: 40px;
+  }
+
+  header {
+      justify-content: space-between;
+      flex-wrap: wrap; 
+  }
+
+  button {
+      display: none;
+  }
+
+  .topmenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .viewer {
+    width: 60%;
+    height: 60%;
+  }
+} 
+
+/*-------------------------Utilities and Helpers-------------------------*/
+/* Utility classes for margins, padding, text alignment, etc. */
+
+/* Hide Button effects */
+.hide {
+  display: none;
+}
