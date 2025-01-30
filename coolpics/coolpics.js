@@ -1,60 +1,48 @@
-/*------------------------Menu Button------------------------*/
-/* Toggling the menu button */
-const menuButton = document.querySelector("header button"); // Selects the first 'button' element within the 'header' element
-
-function toggleMenu() { // Creates the 'toggleMenu' function
-    const menu = document.querySelector(".topmenu"); // Selects the HTML element that has the class of ".topmenu"
-    menu.classList.toggle("hide"); // Toggles the "hide" class, which controls the visibility of the menu
+document.querySelector("#menu-button").addEventListener("click", show_hide)
+window.addEventListener("resize", handleResize);
+const gallery = document.querySelectorAll("img");
+for (const image of gallery) {
+    image.addEventListener("click", viewHandler)
 }
 
-menuButton.addEventListener("click", toggleMenu); // Adds an event listener to the menu button to call toggleMenu on click
+function show_hide() {
+    const navigation = document.querySelector(".navigation");
+    navigation.classList.toggle("hide");
+}
 
-/*------------------------Window Resize------------------------*/
-/* Handles the window resizing event */
-function handleResize() { // Specifically called 'handleResize'
-    const menu = document.querySelector(".topmenu"); // Selects the HTML element that has the class of ".topmenu"
-    if (window.innerWidth > 1000) { // If the width of the window is over 1000 pixels...
-        menu.classList.remove("hide"); // Remove the "hide" class
-    } else { // Otherwise (if the window width is 1000px or less)
-        menu.classList.add("hide"); // Add the "hide" class
+function handleResize() {
+    const width = window.innerWidth;
+    const navigation = document.querySelector(".navigation");
+    if (width > 1000) {
+        navigation.classList.remove("hide");
+    } else {
+        navigation.classList.add("hide")
     }
 }
 
-handleResize(); // Immediately check the size when the page loads
-window.addEventListener("resize", handleResize); // Listen for resize events and call handleResize
-
-/*------------------------Modal Viewer Template------------------------*/
-/* Swap-able source to display images */
-function viewerTemplate(pic, alt) { // Takes the path for the image and the alt text as parameters
+function viewerTemplate(pic, alt) {
     return `<div class="viewer">
-    <button class="close-viewer">X</button>
-    <img src="${pic}" alt="${alt}">
-    </div>`;
+        <button class="close-viewer">X</button>
+        <img src="${pic}" alt="${alt}">
+        </div>`;
 }
 
-/*------------------------Viewer Handler------------------------*/
-/* Pulls up the images themselves to be displayed */
 function viewHandler(event) {
-    const target = event.target; // Creates a variable "target" from the event target (the clicked element)
-    if (target.tagName === 'IMG') { // If the clicked element is an image...
-        const src = target.src.split('-')[0]; // Splits the src of the image at the hyphen and takes the first part
-        const fullSrc = `${src}-full.jpeg`; // Constructs the full-size image src
-        const alt = target.alt; // Gets the alt text from the image
-        const viewerHTML = viewerTemplate(fullSrc, alt); // Gets the HTML for the viewer
-
-        document.body.insertAdjacentHTML("afterbegin", viewerHTML); // Inserts the viewer's HTML at the beginning of the body
-
-        const closeButton = document.querySelector(".close-viewer"); // Selects the close button
-        closeButton.addEventListener("click", closeViewer); // Adds an event listener to the close button to call closeViewer on click
-    }
+	// create a variable to hold the element that was clicked on from event.target
+    const element = event.target;
+	// get the src attribute from that element and 'split' it on the "-"
+    const srcValue = element.getAttribute("src");
+    const words = srcValue.split("-");
+	// construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
+    const imageFileName = words[0] + "-full.jpeg";
+    console.log(imageFileName);
+	// insert the viewerTemplate into the top of the body element
+	// (element.insertAdjacentHTML("afterbegin", htmltoinsert))
+    document.querySelector("body").insertAdjacentHTML("afterbegin", viewerTemplate(imageFileName, "image"));
+	// add a listener to the close button (X) that calls a function called closeViewer when clicked
+    document.querySelector(".close-viewer").addEventListener("click", closeViewer);
 }
 
-function closeViewer() { // Closes the viewer
-    const viewer = document.querySelector(".viewer"); // Selects the viewer element
-    if (viewer) { // If the viewer element exists...
-        viewer.remove(); // Remove the viewer from the DOM
-    }
+function closeViewer() {
+    document.querySelector("body").removeChild(document.querySelector("div"));
 }
-
-const gallery = document.querySelector(".gallery"); // Selects the gallery element
-gallery.addEventListener("click", viewHandler); // Adds an event listener to the gallery to call viewHandler on click
