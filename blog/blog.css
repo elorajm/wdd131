@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Mooli&display=swap");
+:root {
+    --border-color: #EFC69B;
+    --title-color: #AF1B3F;
+    --text-color: #473144;
+}
+
+header h1 {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.header-links {
+    display: grid;
+    grid-template-columns: 5em 7em 6em;
+    color: var(--title-color);
+    justify-content: end;
+    justify-items: end;
+    list-style: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 3em;
+    margin-bottom: 2em;
+}
+
+.header-links a {
+    color: var(--title-color);
+    text-decoration: none;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.articles {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 1em;
+    row-gap: 2em;
+    padding-right: 1em;
+}
+
+.date {
+    font-size:1.2em;
+}
+
+.articles h2 {
+    color: var(--title-color);
+}
+
+.articles img {
+    display: block;
+    margin: 0 auto;
+}
+
+.book-info-left {
+    border-right: 1px solid var(--border-color);
+    text-align: right;
+    padding: 1em;
+    padding-top: .2em;
+}
+
+.filter-form {
+    border: 1px solid var(--border-color);
+}
+
+.skiptocontent a {
+    position: absolute;
+    top: -1000px;
+    justify-self: left;
+    align-self: center;
+    background-color: yellow;
+    color: black;
+}
+.skiptocontent a:focus {
+    top: 160px;
+}
+
+footer {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+footer p {
+    padding-left: 5vw;
+}
+
+footer a {
+    padding-right: 5vw;
+    align-self: center;
+    justify-self: right;
+}
