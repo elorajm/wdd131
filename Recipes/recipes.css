@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+:root {
+    --primary-color: #ffffff; /* Adjust as necessary */
+    --text-color: #000000; /* Black */
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: 'Amatic SC';
+}
+
+body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
+    background: #ffffff; /* Ensure the entire background is white */
+    color: var(--text-color); /* Set text color to black */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    background: var(--primary-color);
+    padding: 1rem;
+    color: #ffffff; /* White text in header */
+}
+
+header img {
+    height: 100px;
+    margin-right: 1rem;
+    padding-bottom: 50px;
+}
+
+header h1 {
+    font-family: var(--secondary-font);
+    color: var(--text-color); /* Ensure header text is black */
+    font-size: 4rem;
+}
+
+main {
+    padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--primary-color); /* Ensure main content background is white */
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+form input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    color: var(--text-color); /* Ensure input text is black */
+}
+
+form button {
+    background: var(--primary-color);
+    border: 1px solid var(--text-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button img {
+    width: 24px;
+    height: 24px;
+}
+
+#recipe-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 150px;
+}
+
+.recipe-card {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row; /* Make the card content row-oriented */
+    background: #ffffff; /* Ensure recipe card background is white */
+    padding: 20px;
+}
+
+.recipe-card img {
+    width: 50%; /* Adjust as necessary */
+    height: auto;
+    object-fit: cover; /* Ensure image covers the area without distortion */
+}
+
+.recipe-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%; /* Ensure it takes the remaining width */
+    color: var(--text-color); /* Ensure recipe info text is black */
+}
+
+.recipe-info .tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-info .tags span {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.recipe-info h2 {
+    margin: 0.5rem 0;
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    color: var(--text-color); /* Ensure recipe title is black */
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    color: gold; /* Ensure rating stars are gold */
+    margin-bottom: 0.5rem;
+}
+
+.rating .icon-star,
+.rating .icon-star-empty {
+    font-size: 1.5rem;
+}
+
+.recipe-info p {
+    margin: 0.5rem 0;
+    color: var(--text-color); /* Ensure description text is black */
+}
+
+footer {
+    background: var(--primary-color);
+    color: #000000; /* Ensure footer text is black */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-left: 2rem; /* Add padding to the left */
+    padding-right: 2rem; /* Add padding to the right */
+    box-sizing: border-box; /* Include padding in the element's width */
+}
+
+footer p {
+    font-size: 0.6em;
+    margin: 0;
+    color: var(--text-color); /* Ensure footer text is black */
+}
+
+.social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social a img {
+    width: 36px;
+    height: 36px;
+}
+
+@media (min-width: 600px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    form {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #recipe-display {
+        width: 100%;
+    }
+
+    .recipe-card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 960px) {
+    main {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    #recipe-display {
+        width: 100%;
+    }
+
+    .recipe-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .recipe-card {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .recipe-card img {
+        width: 100%; /* Full width of the card */
+        height: auto;
+    }
+
+    .recipe-info {
+        width: 100%; /* Full width of the card */
+    }
+
+    .recipe-info .rating {
+        margin-bottom: 0.5rem;
+        color: gold; /* Ensure rating stars are gold */
+        display: flex; /* Ensure the rating section is displayed */
+        align-items: center;
+    }
+
+    .recipe-info p {
+        display: none; /* Hide description */
+    }
+
+    .social {
+        justify-content: center;
+        margin-bottom: 1rem; /* Add margin at the bottom */
+    }
+
+    footer {
+        flex-direction: column; /* Stack content vertically */
+        padding-left: 1rem; /* Adjust for smaller screens */
+        padding-right: 1rem; /* Adjust for smaller screens */
+        align-items: center; /* Center align the content */
+    }
+
+    footer .social {
+        margin: 1rem 0; /* Add margin for space above and below the social media icons */
+    }
+
+    footer p {
+        margin-top: 1rem; /* Add margin at the top */
+    }
+}
