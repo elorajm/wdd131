@@ -1,0 +1,60 @@
+:root {
+    --primary-color: #1A1B41;
+    --secondary-color: #40798C;
+    --accent1-color: #F1FFE7;
+    --accent2-color: #E2ADF2;
+    --heading-font: 'CoFo Sans', sans-serif;
+    --paragraph-font: 'Lato', 'Helvetica', sans-serif;
+}
+
+body {
+    font-family: var(--paragraph-font);
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent1-color);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+}
+
+.centered {
+    text-align: center; 
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 19 px;
+    background-color: rgba(214, 209, 209, 0.5);
+}
+
+.city {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    height: 270px;
+}
+
+.condition, .centered {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--primary-color);
+    font-family: var(--paragraph-font);
+    background-color: rgba(214, 209, 209, 0.5);
+    
+}

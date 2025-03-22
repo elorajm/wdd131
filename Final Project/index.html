@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Weather App.">
+    <meta name="author" content="Elora Mathias">
+    <meta property="og:title" content="Weather App">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="A Weather App that shows the current weather.">
+    <title>ZipTemp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="weatherapp.js" type="module"></script>
+    <link rel="icon" type="images/png" sizes="32x32" href="./favicon.png">
+</head>
+<body>
+    <header>
+        <div class="logotext">
+        <img height = "100px" src="ZipTemp.png" alt="Weather Logo" style="padding-right: 20px;">
+        <h1>ZipTemp</h1>
+        </div>
+    </header>
+    <main id="main">
+        <div id="weatherResult">
+            <div class="center" id="cityName">Welcome!  Please enter a city name or zip code below.</div>
+            <div class="center" id="condition"></div>
+
+        </div>
+        <form id="weatherForm">
+            <input type="text" id="cityInput" placeholder="Enter a city" required>
+            <button id="lookupButton" type="submit">Get Weather</button>
+        </form>
+    </main>
+    <footer>
+        <a href="topcities.html">Click For Top Cities Current Weather</a>
+    </footer>
+</body>
+</html>
