@@ -1,60 +1,130 @@
+/* CSS file for styling the Top Cities weather page */
+
+/* :root selector to define custom CSS variables */
 :root {
-    --primary-color: #1A1B41;
-    --secondary-color: #40798C;
-    --accent1-color: #F1FFE7;
-    --accent2-color: #E2ADF2;
+    --primary-color: #282A3A; /* Dark Charcoal */
+    --secondary-color: #E63946; /* Crimson */
+    --accent1-color: #F1FAEE; /* Off-White */
+    --accent2-color: #A8DADC; /* Light Cyan */
     --heading-font: 'CoFo Sans', sans-serif;
     --paragraph-font: 'Lato', 'Helvetica', sans-serif;
 }
 
+/* Styles for the entire body */
 body {
     font-family: var(--paragraph-font);
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background-color: var(--accent1-color);
+    color: var(--primary-color);
 }
 
+/* Styles for the gallery section */
 .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Styles for centering content */
 .centered {
-    text-align: center; 
+    text-align: center;
 }
 
+/* Styles for the header section */
 header {
     text-align: center;
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Styles for the footer section */
 footer {
     text-align: center;
-    position: fixed; 
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 19 px;
-    background-color: rgba(214, 209, 209, 0.5);
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
 }
 
+/* Styles for the city containers */
 .city {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
-    background-color: #f9f9f9;
-    height: 270px;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
 }
 
-.condition, .centered {
+/* Styles for the city containers on hover */
+.city:hover {
+    transform: translateY(-5px);
+}
+
+/* Styles for the condition and centered classes */
+.condition,
+.centered {
     margin-top: 1rem;
     text-align: center;
     color: var(--primary-color);
     font-family: var(--paragraph-font);
-    background-color: rgba(214, 209, 209, 0.5);
-    
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(241, 250, 238, 0.6);
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+/* Added styles for additional cities */
+.city h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.city img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.city p {
+    font-size: 1rem;
+}
+
+/* Keyframes for the background animation */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Styles for the body with background animation */
+body {
+    background: linear-gradient(270deg, #282A3A, #E63946, #F1FAEE, #A8DADC);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 30s ease infinite;
 }

@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for SEO and accessibility -->
     <meta name="description" content="A Weather App.">
     <meta name="author" content="Elora Mathias">
     <meta property="og:title" content="Weather App">
     <meta property="og:type" content="website">
     <meta property="og:description" content="A Weather App that shows the current weather.">
     <title>ZipTemp</title>
+    <!-- Link to the CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Link to the JavaScript file, using type="module" for ES modules -->
     <script src="weatherapp.js" type="module"></script>
+    <!-- Link to the favicon (small icon in the browser tab) -->
     <link rel="icon" type="images/png" sizes="32x32" href="./favicon.png">
 </head>
-<body>
-    <header>
-        <div class="logotext">
-        <img height = "100px" src="ZipTemp.png" alt="Weather Logo" style="padding-right: 20px;">
-        <h1>ZipTemp</h1>
-        </div>
-    </header>
-    <main id="main">
-        <div id="weatherResult">
-            <div class="center" id="cityName">Welcome!  Please enter a city name or zip code below.</div>
-            <div class="center" id="condition"></div>
 
+<body>
+    <!-- Container for weather animations.  Covers the entire screen -->
+    <div id="weatherAnimationContainer"></div>
+    <!-- Header section of the page -->
+    <header>
+        <!-- Div to center the logo image -->
+        <div style="text-align: center;">
+            <!-- Logo image, linked to the ZipTemp.png file -->
+            <img src="ZipTemp.png" alt="ZipTemp Logo" style="max-height: 75px; margin-bottom: 0.5rem;">
         </div>
+        <!-- Main title of the page -->
+        <h1>ZipTemp</h1>
+    </header>
+    <!-- Main content area of the page -->
+    <main id="main">
+        <!-- Div to display weather results -->
+        <div id="weatherResult">
+            <!-- Div to display the city name -->
+            <div class="center" id="cityName">Welcome! Please enter a city name or zip code below.</div>
+            <!-- Div to display the weather condition -->
+            <div class="center" id="condition"></div>
+            <!-- Div to display the time zone -->
+            <div class="center" id="timeZone"></div>
+            <!-- Div to display the local time -->
+            <div class="center" id="time"></div>
+        </div>
+        <!-- Form for inputting a city name -->
         <form id="weatherForm">
+            <!-- Text input field for entering a city -->
             <input type="text" id="cityInput" placeholder="Enter a city" required>
+            <!-- Button to trigger the weather lookup -->
             <button id="lookupButton" type="submit">Get Weather</button>
         </form>
     </main>
+    <!-- Footer section of the page -->
     <footer>
+        <!-- Link to the Top Cities page -->
         <a href="topcities.html">Click For Top Cities Current Weather</a>
     </footer>
 </body>
+
 </html>

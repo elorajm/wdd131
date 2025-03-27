@@ -1,55 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for SEO and accessibility -->
     <meta name="description" content="A Weather App.">
     <meta name="author" content="Elora Mathias">
     <meta property="og:title" content="Top Cities Weather">
     <meta property="og:type" content="website">
     <meta property="og:description" content="A Weather App that shows the current weather of top cities around the world.">
     <title>Top Cities Weather</title>
+    <!-- Preconnect to the weather API for faster loading -->
     <link rel="preconnect" href="https://api.weatherapi.com">
+    <!-- Link to the CSS stylesheet -->
     <link rel="stylesheet" href="topcities.css">
+    <!-- Link to the JavaScript file, using defer to load it after the HTML -->
     <script src="topcities.js" defer></script>
+    <!-- Link to the favicon (small icon in the browser tab) -->
     <link rel="icon" type="images/png" sizes="32x32" href="./favicon.png">
 </head>
+
 <body>
+    <!-- Header section of the page -->
     <header>
+        <!-- Div to center the logo image -->
+        <div style="text-align: center;">
+            <!-- Logo image, linked to the ZipTemp.png file -->
+            <img src="ZipTemp.png" alt="ZipTemp Logo" style="max-height: 75px; margin-bottom: 0.5rem;">
+        </div>
+        <!-- Main title of the page -->
         <h1>Top Cities Weather Forecast</h1>
     </header>
+    <!-- Main content area of the page -->
     <main>
+        <!-- Div for detailed forecast (currently empty) -->
         <div id="detailedForecast"></div>
+        <!-- Section to display the top cities -->
         <section class="gallery">
+            <!-- London city container -->
             <div id="london" class="city">
                 <div class="centered">
-                    <h2>London</h2>
+                    <!-- Link to the London definition page -->
+                    <h2><a href="london.html">London</a></h2>
+                    <!-- Div to display the London weather condition -->
                     <div class="condition" id="london-weather"></div>
+                    <!-- Div to display the London time zone -->
+                    <div class="timeZone" id="london-timeZone"></div>
+                    <!-- Div to display the London local time -->
+                    <div class="time" id="london-time"></div>
                 </div>
             </div>
+            <!-- Dubai city container -->
             <div id="dubai" class="city">
                 <div class="centered">
-                    <h2>Dubai</h2>
+                    <!-- Link to the Dubai definition page -->
+                    <h2><a href="dubai.html">Dubai</a></h2>
+                    <!-- Div to display the Dubai weather condition -->
                     <div class="condition" id="dubai-weather"></div>
+                    <!-- Div to display the Dubai time zone -->
+                    <div class="timeZone" id="dubai-timeZone"></div>
+                    <!-- Div to display the Dubai local time -->
+                    <div class="time" id="dubai-time"></div>
                 </div>
             </div>
+            <!-- Tokyo city container -->
             <div id="tokyo" class="city">
                 <div class="centered">
-                    <h2>Tokyo</h2>
+                    <!-- Link to the Tokyo definition page -->
+                    <h2><a href="tokyo.html">Tokyo</a></h2>
+                    <!-- Div to display the Tokyo weather condition -->
                     <div class="condition" id="tokyo-weather"></div>
+                    <!-- Div to display the Tokyo time zone -->
+                    <div class="timeZone" id="tokyo-timeZone"></div>
+                    <!-- Div to display the Tokyo local time -->
+                    <div class="time" id="tokyo-time"></div>
                 </div>
             </div>
+            <!-- New York city container -->
             <div id="ny" class="city">
                 <div class="centered">
-                    <h2>New York</h2>
+                    <!-- Link to the New York definition page -->
+                    <h2><a href="newyork.html">New York</a></h2>
+                    <!-- Div to display the New York weather condition -->
                     <div class="condition" id="ny-weather"></div>
+                    <!-- Div to display the New York time zone -->
+                    <div class="timeZone" id="ny-timeZone"></div>
+                    <!-- Div to display the New York local time -->
+                    <div class="time" id="ny-time"></div>
+                </div>
+            </div>
+            <!-- Sydney city container -->
+            <div id="sydney" class="city">
+                <div class="centered">
+                    <!-- Link to the Sydney definition page -->
+                    <h2><a href="sydney.html">Sydney</a></h2>
+                    <!-- Div to display the Sydney weather condition -->
+                    <div class="condition" id="sydney-weather"></div>
+                    <!-- Div to display the Sydney time zone -->
+                    <div class="timeZone" id="sydney-timeZone"></div>
+                    <!-- Div to display the Sydney local time -->
+                    <div class="time" id="sydney-time"></div>
+                </div>
+            </div>
+            <!-- Paris city container -->
+            <div id="paris" class="city">
+                <div class="centered">
+                    <!-- Link to the Paris definition page -->
+                    <h2><a href="paris.html">Paris</a></h2>
+                    <!-- Div to display the Paris weather condition -->
+                    <div class="condition" id="paris-weather"></div>
+                    <!-- Div to display the Paris time zone -->
+                    <div class="timeZone" id="paris-timeZone"></div>
+                    <!-- Div to display the Paris local time -->
+                    <div class="time" id="paris-time"></div>
+                </div>
+            </div>
+            <!-- Rio de Janeiro city container -->
+            <div id="rio" class="city">
+                <div class="centered">
+                    <!-- Link to the Rio de Janeiro definition page -->
+                    <h2><a href="rio.html">Rio de Janeiro</a></h2>
+                    <!-- Div to display the Rio de Janeiro weather condition -->
+                    <div class="condition" id="rio-weather"></div>
+                    <!-- Div to display the Rio de Janeiro time zone -->
+                    <div class="timeZone" id="rio-timeZone"></div>
+                    <!-- Div to display the Rio de Janeiro local time -->
+                    <div class="time" id="rio-time"></div>
+                </div>
+            </div>
+            <!-- Rome city container -->
+            <div id="rome" class="city">
+                <div class="centered">
+                    <!-- Link to the Rome definition page -->
+                    <h2><a href="rome.html">Rome</a></h2>
+                    <!-- Div to display the Rome weather condition -->
+                    <div class="condition" id="rome-weather"></div>
+                    <!-- Div to display the Rome time zone -->
+                    <div class="timeZone" id="rome-timeZone"></div>
+                    <!-- Div to display the Rome local time -->
+                    <div class="time" id="rome-time"></div>
                 </div>
             </div>
 
         </section>
     </main>
+    <!-- Footer section of the page -->
     <footer>
+        <!-- Link back to the main weather app page -->
         <a href="index.html">Back to Weather</a>
     </footer>
 </body>
+
 </html>
